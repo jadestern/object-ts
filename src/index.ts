@@ -138,3 +138,11 @@ class Theater {
     this.ticketSeller.sellTo(audience);
   }
 }
+const ticket = new Ticket(10000);
+const ticketOffice = new TicketOffice(0, ticket);
+const ticketSeller = new TicketSeller(ticketOffice);
+const theater = new Theater(ticketSeller);
+const bag = new Bag(20000);
+const audience = new Audience(bag);
+theater.enter(audience);
+console.log(theater);
